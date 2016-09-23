@@ -11,14 +11,6 @@ router.get('/', function(req, res) {
   });
 });
 
-// router.get('/tree_house', function(req, res){
-//   models.space.findAll({where: {id: 1}}).then(function(spaces){
-//   res.render('theSpace', {
-//     spaces: spaces
-//   });
-// });
-// });
-
 router.get('/:id', function(req, res){
   models.space.findAll({
     where: {

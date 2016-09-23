@@ -37,7 +37,7 @@ describe ('User creates a new space', function() {
       describe ('viewing specific space', function(){
         before(function(done){
           this.browser
-            .clickLink('Click here to edit this space!', done);
+            .clickLink('Arctic Tree House', done);
         });
         it('should take you to the page of the property', function(){
           this.browser.assert.success();

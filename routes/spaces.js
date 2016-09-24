@@ -1,3 +1,4 @@
+
 var express = require('express');
 var router = express.Router();
 var models  = require('../models');
@@ -11,6 +12,13 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/new', function(req, res) {
+  res.render('create_space', {
+    h1: 'List a space'
+  });
+});
+
+
 router.get('/:id', function(req, res){
   models.space.findAll({
     where: {
@@ -22,6 +30,7 @@ router.get('/:id', function(req, res){
   });
 });
 });
+
 
 router.get('/:id/edit', function(req, res){
   models.space.findAll({where: {id: req.params.id}}).then(function(spaces){
@@ -42,11 +51,6 @@ router.post('/:id/edit', function(req, res){
     });
 });
 
-router.get('/new', function(req, res) {
-  res.render('create_space', {
-    h1: 'List a space'
-  });
-});
 
 router.post('/', function(req, res) {
   models.space.create({
@@ -58,9 +62,5 @@ router.post('/', function(req, res) {
       res.redirect('/spaces');
     });
 });
-
-
-
-
 
 module.exports = router;

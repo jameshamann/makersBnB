@@ -1,19 +1,18 @@
-html
+extends layout
 
-head
+block content
 
-body
-  h1= h1
+  body
+    h1= h1
 
-ul
+  ul
 
-  each val in spaces
+    each val in spaces
 
-    li(id='title' )= val.dataValues.title + ' '
-    li(id='description')= val.dataValues.description + ' '
-    li(id='price')= val.dataValues.price + ' '
-    li(id='availability')= val.dataValues.availability + ' '
-
-    a(href='http://localhost:3000/spaces/' + val.dataValues.id) Arctic Tree House
+      li(id='title' )
+         a(href='http://localhost:3000/spaces/' + val.dataValues.id)= val.dataValues.title + ' '
+      li(id='description')= val.dataValues.description + ' '
+      li(id='price')= val.dataValues.price + ' '
+      li(id='availability')= val.dataValues.availability + ' '
 
     br

@@ -3,9 +3,9 @@
 module.exports = function(sequelize, DataTypes) {
  var Space = sequelize.define("space", {
    title: DataTypes.STRING,
-   description: DataTypes.STRING,
+   description: DataTypes.TEXT,
    price: DataTypes.INTEGER,
-   availability: DataTypes.STRING
+   availability: DataTypes.STRING,
  });
 
  return Space;
